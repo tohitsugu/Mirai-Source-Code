@@ -29,11 +29,11 @@ modified build.sh to download go packages
 
 
 steps to setup build environment
- - git pull
- - vagrant up
- - vagrant ssh
- - cd /vagrant/mirai
- - ./build.sh
+ - `git pull`
+ - `vagrant up`
+ - `vagrant ssh`
+ - `cd /vagrant/mirai`
+ - `./build.sh`
 
 Steps to create database:
 `cat Configure_CNC_Database.txt | mysql -u root --password=password`
@@ -42,4 +42,11 @@ Start the CnC
 - make a prompt file in ./release
 - `cd ./release`
 - `sudo ./cnc`
+
+To start making the CnC talking to something, after building the binaries, you'll want to have a second machine. That's why the vagrant VM has two.
+I'm not going to waste my time describing this in detail, but basically:
+1: Create bare linux vm
+2: drop compilex x86 binary
+3: make sure your running some kind of DNS spoofer and you've got your IP routing setup right (look at Vagrantfile for some inspiration)
+4: Make sure your gateways are dead ended, etc...
 

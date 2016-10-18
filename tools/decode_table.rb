@@ -56,3 +56,9 @@ hashtable.each { |key, value|
   value.each_byte { |bite| decode_value << "\\x%02x" % (bite ^ 0x22) }
   puts "add_entry(#{key}, \"#{decode_value.join}\", #{value.length});"
 }
+
+hashtable.each { |key, value| 
+  decode_value = []
+  value.each_byte { |bite| decode_value << (bite ^ 0x22).chr }
+  puts "#{key}: #{decode_value.join}"
+}
