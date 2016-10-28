@@ -45,8 +45,9 @@ Start the CnC
 
 To start making the CnC talking to something, after building the binaries, you'll want to have a second machine. That's why the vagrant VM has two.
 I'm not going to waste my time describing this in detail, but basically:
-1: Create bare linux vm
-2: drop compilex x86 binary
-3: make sure your running some kind of DNS spoofer and you've got your IP routing setup right (look at Vagrantfile for some inspiration)
-4: Make sure your gateways are dead ended, etc...
+- Create bare linux vm (ubuntu server works)
+- join that vm to virtual box network mirai_net
+- drop compiled  x86 binary (rename to the magic word or it won't run right)
+- make sure your running some kind of DNS spoofer . The easy version is to go sudo python /vagrant/tools/fakedns.py after a vagrant up.l
+- Make sure your gateways are dead ended, etc...
 
