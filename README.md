@@ -1,6 +1,6 @@
 # Mirai Botnet Client, Echo Loader and CNC source code
 
-'This is a fork of jgamblin/Mirai-Source-Code. The intent is to create a clean build environment of Mirai for analysis and sandboxing.
+This is a fork of jgamblin/Mirai-Source-Code. The intent is to create a clean build environment of Mirai for analysis and sandboxing.
 
 Things have changed from the original:
 - Merged Felicitychou's additions
