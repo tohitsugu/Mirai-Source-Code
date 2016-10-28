@@ -30,7 +30,7 @@ After building the binaries, you'll want to deploy the built bot's to another ma
 - Create bare linux vm (ubuntu server works)
 - join that vm to virtual box network mirai_net (see Vagrantfile )
 - drop compiled  x86 binary (rename to the magic word or it won't run right)
-- Spoof DNS. The easy version is to go sudo python /vagrant/tools/fakedns.py after a vagrant up (again see source and Vagrantfile)
+- Spoof DNS. The easy version is to go `sudo python /vagrant/tools/fakedns.py` after a vagrant up (again see source and Vagrantfile)
 - Make sure your gateways are dead ended, dont do NAT or packet forwarding or any nonesense....
 
 
