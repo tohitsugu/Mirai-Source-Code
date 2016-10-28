@@ -1,3 +1,5 @@
+# Deobfuscates poorly xor encrypted hash table.
+
 hashtable = {
   TABLE_CNC_DOMAIN: "\x41\x4c\x41\x0c\x41\x4a\x43\x4c\x45\x47\x4f\x47\x0c\x41\x4d\x4f\x22",
   TABLE_CNC_PORT: "\x22\x35",
