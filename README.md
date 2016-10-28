@@ -1,10 +1,13 @@
 # Mirai Botnet Client, Echo Loader and CNC source code
 
-Merged Felicitychou's additions and setup Vagrant file.
-To setup build environment, you just need to "vagrant up"
-Also removed obfuscation of table.c, so no need to run "enc" tool anymore
-Have modified some shell scripts to install more cross compiler packages and remove errors
-modified build.sh to download go packages
+'This is a fork of jgamblin/Mirai-Source-Code. The intent is to create a clean build environment of Mirai for analysis and sandboxing.
+
+Things have changed from the original:
+- Merged Felicitychou's additions
+- setup Vagrant file
+- Removed obfuscation of table.c, so no need to run "enc" tool anymore. Added de-obfuscator to /tools/ dir.
+- modified some of the original shell scripts to install more cross compiler packages and remove build errors
+- modified build.sh to download go packages
 
 
 steps to setup build environment
@@ -15,20 +18,20 @@ steps to setup build environment
  - `./build.sh`
 
 Steps to create database:
-`cat Configure_CNC_Database.txt | mysql -u root --password=password`
+ - `cat Configure_CNC_Database.txt | mysql -u root --password=password`
 
 Start the CnC
 - make a prompt file in ./release
 - `cd ./release`
 - `sudo ./cnc`
+- `telnet localhost`
 
-To start making the CnC talking to something, after building the binaries, you'll want to have a second machine. That's why the vagrant VM has two.
-I'm not going to waste my time describing this in detail, but basically:
+After building the binaries, you'll want to deploy the built bot's to another machine for communication. I suggest the following steps:
 - Create bare linux vm (ubuntu server works)
-- join that vm to virtual box network mirai_net
+- join that vm to virtual box network mirai_net (see Vagrantfile )
 - drop compiled  x86 binary (rename to the magic word or it won't run right)
-- make sure your running some kind of DNS spoofer . The easy version is to go sudo python /vagrant/tools/fakedns.py after a vagrant up.l
-- Make sure your gateways are dead ended, etc...
+- Spoof DNS. The easy version is to go sudo python /vagrant/tools/fakedns.py after a vagrant up (again see source and Vagrantfile)
+- Make sure your gateways are dead ended, dont do NAT or packet forwarding or any nonesense....
 
 
 # Original README.md
